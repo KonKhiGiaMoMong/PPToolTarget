@@ -112,6 +112,14 @@ namespace WpfToolsTarget {
         #line hidden
         
         
+        #line 45 "..\..\MainWindow.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button btnCopy;
+        
+        #line default
+        #line hidden
+        
+        
         #line 46 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox cbbTargetSub;
@@ -261,9 +269,10 @@ namespace WpfToolsTarget {
             #line hidden
             return;
             case 11:
+            this.btnCopy = ((System.Windows.Controls.Button)(target));
             
             #line 45 "..\..\MainWindow.xaml"
-            ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.Button_Click_1);
+            this.btnCopy.Click += new System.Windows.RoutedEventHandler(this.btnCopy_Click);
             
             #line default
             #line hidden

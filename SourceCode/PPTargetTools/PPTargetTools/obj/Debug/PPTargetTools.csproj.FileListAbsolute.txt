@@ -34,3 +34,6 @@ D:\KloonWork\PPToolTarget\pp-tools-target\PPTargetTools\PPTargetTools\obj\Debug\
 D:\KloonWork\PPToolTarget\pp-tools-target\PPTargetTools\PPTargetTools\obj\Debug\PPTargetTools.csprojResolveAssemblyReference.cache
 D:\KloonWork\PPToolTarget\pp-tools-target\PPTargetTools\PPTargetTools\obj\Debug\GeneratedInternalTypeHelper.g.cs
 D:\KloonWork\PPToolTarget\pp-tools-target\PPTargetTools\PPTargetTools\obj\Debug\PPTargetTools_MarkupCompile.lref
+D:\KloonWork\PPToolTarget\pp-tools-target-github\PPToolTarget\SourceCode\PPTargetTools\PPTargetTools\bin\Debug\PPTargetTools.exe.config
+D:\KloonWork\PPToolTarget\pp-tools-target-github\PPToolTarget\SourceCode\PPTargetTools\PPTargetTools\obj\Debug\PPTargetTools.exe
+D:\KloonWork\PPToolTarget\pp-tools-target-github\PPToolTarget\SourceCode\PPTargetTools\PPTargetTools\obj\Debug\PPTargetTools.pdb

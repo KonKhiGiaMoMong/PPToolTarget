@@ -351,7 +351,121 @@ namespace WpfToolsTarget
             }
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+
+        private void btnCopyReverse_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (cbbTargetSub.SelectedIndex != -1)
+                {
+                    string path = System.IO.Path.GetDirectoryName(txtpath.Text);
+                    string pathFrom = path + " \\PPModernUI\\PP\\PP.Presentation\\Package.appxmanifest";
+                    string pathTo = path + " \\Clients\\" + cbbTargetSub.SelectedValue;
+
+                    // Copy File Package.appxmanifest
+                    if (File.Exists(pathFrom))
+                    {
+                        try
+                        {
+                            pathTo = pathTo + @"\Modern\assets\Package.appxmanifest";
+
+                            FileInfo fl = new FileInfo(pathFrom);
+                            fl.CopyTo(pathTo);
+                            MessageBox.Show("Copy file completed.", "Copy file", MessageBoxButton.OK, MessageBoxImage.Information);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Copy file uncompleted.\r\n" + ex.ToString(), "Copy file", MessageBoxButton.OK, MessageBoxImage.Information);
+                        }
+                    }
+
+                }
+                else MessageBox.Show("You must choose a target.", "Select target", MessageBoxButton.OK, MessageBoxImage.Error);
+
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void txtpath_MouseLeave(object sender, MouseEventArgs e)
+        {
+
+            if (cbExistTarget.IsChecked == true)
+            {
+                FillTargetNameCombo(txtpath.Text.Trim(), new ComboBox[] { cbbTarget, cbbTargetSub });
+            }
+        }
+
+        private void txtpath_PreviewKeyUp(object sender, KeyEventArgs e)
+        {
+            if (cbExistTarget.IsChecked == true)
+            {
+                FillTargetNameCombo(txtpath.Text.Trim(), new ComboBox[] { cbbTarget, cbbTargetSub });
+            }
+        }
+
+        private void btnEdit_Config_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (cbPPDesktop.IsChecked == false && cbPPModernUI.IsChecked == false)
+            {
+                MessageBox.Show("Choose a target type.", "Target", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            if (cbbTargetSub.SelectedIndex<0)
+            {
+                
+                MessageBox.Show("You must choose a target.", "Target", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            if (!Directory.Exists(txtpath.Text + "\\" + cbbTargetSub.SelectedItem.ToString() + "\\AppConfig"))
+            {
+                MessageBox.Show("This Director is not exist.", "Edit Config", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            if (cbPPDesktop.IsChecked == true)
+            {
+                try
+                {
+                    DirectoryInfo dir = new DirectoryInfo(txtpath.Text + "\\" + cbbTargetSub.SelectedItem.ToString() + "\\AppConfig");
+                    FileInfo[] fileInfo = dir.GetFiles();
+                    foreach (FileInfo file in fileInfo)
+                    {
+                        string filename = System.IO.Path.GetFileName(file.ToString());
+                        if (filename.Contains("ControlConf.conf") == true)
+                        {
+                            ConfigDesktop conf = new ConfigDesktop(dir.ToString() + "\\" + filename);
+                            conf.filepath = dir.ToString() + "\\" + filename;
+                            conf.ShowDialog();
+                        }
+                        else
+                        {
+                            MessageBox.Show("File Config is not Exist.", "Config", MessageBoxButton.OK, MessageBoxImage.Error);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("File Config is not Exist.", "Config", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+            else if (cbPPModernUI.IsChecked == true)
+            {
+                String fileName = txtpath.Text + "\\" + cbbTargetSub.SelectedItem.ToString() + "\\AppConfig\\AppConfig.conf";
+                if (!File.Exists(fileName))
+                {
+                    MessageBox.Show("File Config is not Exist.", "Config", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+                (new ConfigModernUI(fileName, cbbTargetSub.SelectedItem.ToString())).ShowDialog();
+            }
+
+        }
+
+        private void btnCopy_Click(object sender, RoutedEventArgs e)
         {
             try
             {
@@ -497,120 +611,6 @@ namespace WpfToolsTarget
             {
 
             }
-
-        }
-
-        private void btnCopyReverse_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                if (cbbTargetSub.SelectedIndex != -1)
-                {
-                    string path = System.IO.Path.GetDirectoryName(txtpath.Text);
-                    string pathFrom = path + " \\PPModernUI\\PP\\PP.Presentation\\Package.appxmanifest";
-                    string pathTo = path + " \\Clients\\" + cbbTargetSub.SelectedValue;
-
-                    // Copy File Package.appxmanifest
-                    if (File.Exists(pathFrom))
-                    {
-                        try
-                        {
-                            pathTo = pathTo + @"\Modern\assets\Package.appxmanifest";
-
-                            FileInfo fl = new FileInfo(pathFrom);
-                            fl.CopyTo(pathTo);
-                            MessageBox.Show("Copy file completed.", "Copy file", MessageBoxButton.OK, MessageBoxImage.Information);
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("Copy file uncompleted.\r\n" + ex.ToString(), "Copy file", MessageBoxButton.OK, MessageBoxImage.Information);
-                        }
-                    }
-
-                }
-                else MessageBox.Show("You must choose a target.", "Select target", MessageBoxButton.OK, MessageBoxImage.Error);
-
-            }
-            catch (Exception)
-            {
-            }
-        }
-
-        private void txtpath_MouseLeave(object sender, MouseEventArgs e)
-        {
-
-            if (cbExistTarget.IsChecked == true)
-            {
-                FillTargetNameCombo(txtpath.Text.Trim(), new ComboBox[] { cbbTarget, cbbTargetSub });
-            }
-        }
-
-        private void txtpath_PreviewKeyUp(object sender, KeyEventArgs e)
-        {
-            if (cbExistTarget.IsChecked == true)
-            {
-                FillTargetNameCombo(txtpath.Text.Trim(), new ComboBox[] { cbbTarget, cbbTargetSub });
-            }
-        }
-
-        private void btnEdit_Config_Click(object sender, RoutedEventArgs e)
-        {
-
-            if (cbPPDesktop.IsChecked == false && cbPPModernUI.IsChecked == false)
-            {
-                MessageBox.Show("Choose a target type.", "Target", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
-
-            if (cbbTargetSub.SelectedIndex<0)
-            {
-                
-                MessageBox.Show("You must choose a target.", "Target", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
-            if (!Directory.Exists(txtpath.Text + "\\" + cbbTargetSub.SelectedItem.ToString() + "\\AppConfig"))
-            {
-                MessageBox.Show("This Director is not exist.", "Edit Config", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
-
-            if (cbPPDesktop.IsChecked == true)
-            {
-                try
-                {
-                    DirectoryInfo dir = new DirectoryInfo(txtpath.Text + "\\" + cbbTargetSub.SelectedItem.ToString() + "\\AppConfig");
-                    FileInfo[] fileInfo = dir.GetFiles();
-                    foreach (FileInfo file in fileInfo)
-                    {
-                        string filename = System.IO.Path.GetFileName(file.ToString());
-                        if (filename.Contains("ControlConf.conf") == true)
-                        {
-                            ConfigDesktop conf = new ConfigDesktop(dir.ToString() + "\\" + filename);
-                            conf.filepath = dir.ToString() + "\\" + filename;
-                            conf.ShowDialog();
-                        }
-                        else
-                        {
-                            MessageBox.Show("File Config is not Exist.", "Config", MessageBoxButton.OK, MessageBoxImage.Error);
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("File Config is not Exist.", "Config", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-            }
-            else if (cbPPModernUI.IsChecked == true)
-            {
-                String fileName = txtpath.Text + "\\" + cbbTargetSub.SelectedItem.ToString() + "\\AppConfig\\AppConfig.conf";
-                if (!File.Exists(fileName))
-                {
-                    MessageBox.Show("File Config is not Exist.", "Config", MessageBoxButton.OK, MessageBoxImage.Error);
-                    return;
-                }
-                (new ConfigModernUI(fileName, cbbTargetSub.SelectedItem.ToString())).ShowDialog();
-            }
-
         }
 
     }
