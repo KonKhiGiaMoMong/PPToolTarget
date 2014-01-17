@@ -42,7 +42,7 @@
                     <Label Margin="98,67,365,93" Grid.Row="1" Content="Target Name:"/>
                     <CheckBox x:Name="cbPPDesktop" Content="PubCloud DeskTop" Margin="191,32,223,136" Grid.Row="1" Checked="cbPPDesktop_Checked" Unchecked="cbPPDesktop_Unchecked"/>
                     <CheckBox x:Name="cbPPModernUI" Content="PubCloud ModernUI" Margin="362,32,47,136" Grid.Row="1" Unchecked="cbPPModernUI_Unchecked" Checked="cbPPModernUI_Checked" />
-                    <Button Content="Copy" RenderTransformOrigin="19.22,11.218" Height="26" Width="85" Margin="401,173,0,29" Click="Button_Click_1" Grid.Row="1" HorizontalAlignment="Left" />
+                    <Button x:Name="btnCopy" Content="Copy" RenderTransformOrigin="19.22,11.218" Height="26" Width="85" Margin="401,173,0,29" Click="btnCopy_Click" Grid.Row="1" HorizontalAlignment="Left" />
                     <ComboBox x:Name="cbbTargetSub" HorizontalAlignment="Left" Margin="191,67,0,0" Height="26" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="6.69,0.373" Width="322"/>
                     <Button x:Name="btnCopyReverse" Content="Reverse" RenderTransformOrigin="19.22,11.218" Height="26" Width="85" Margin="294,173,0,29" Grid.Row="1" ToolTip="Copy " Click="btnCopyReverse_Click" IsEnabled="False" HorizontalAlignment="Left"/>
                     <Button x:Name="btnEdit_Config" Content="Edit Config" RenderTransformOrigin="19.22,11.218" Height="26" Width="85" Margin="180,173,0,29" Click="btnEdit_Config_Click" Grid.Row="1" HorizontalAlignment="Left" />
