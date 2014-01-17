@@ -1,0 +1,92 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:PPTargetTools.Pages" x:Class="PPTargetTools.Pages.ConfigDesktop"
+        Title="Config Desktop" Height="620.586" Width="806" WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+        <local:ConvertColor x:Key="ConvertColor"/>
+    </Window.Resources>
+
+    <Grid x:Name="gridMain">
+        <StackPanel>
+            <Expander  Header="General" HorizontalAlignment="Left" Margin="5,0,0,0"  VerticalAlignment="Top" Width="782">
+                <StackPanel Margin="15,0,0,0">
+                    <Grid>
+                        <GroupBox Height="170"/>
+                        <Label Content="Title" Margin="81,10,543,130"/>
+                        <TextBox Margin="301,10,134,130" x:Name="txtTitle"/>
+                        <Label Content="SplashScreen" Margin="81,45,543,95"/>
+                        <TextBox Margin="301,45,134,95" x:Name="txtSplashScreen"/>
+                        <Label Content="AppIcon" Margin="81,79,543,61"/>
+                        <TextBox Margin="301,79,134,61" x:Name="txtAppIcon"/>
+                        <Label Content="DefaultPageShowOneColumn" Margin="81,112,516,26"/>
+                        <TextBox Margin="301,112,134,28" x:Name="txtDefault"/>
+                        <Button Margin="678,45,10,95" Content="Browes..." Click="Button_Click"/>
+                        <Image x:Name="imgSplashScreen" Margin="636,45,92,95"  Height="30" Width="40"/>
+                        <Image x:Name="imgAppIcon" Margin="636,79,92,61" RenderTransformOrigin="0.608,1.8"  Height="30" Width="40"/>
+                        <Button Margin="678,79,10,61" Content="Browes..." Click="Button_Click_1" RenderTransformOrigin="0.468,0.133"/>
+                    </Grid>
+                </StackPanel>
+            </Expander>
+            <Expander  Header="Home" HorizontalAlignment="Left" Margin="5,0,0,0" Height="auto"  VerticalAlignment="Top" Width="782">
+                <StackPanel x:Name="controlStackPanel" Margin="12,0,0,0">
+                    <Grid>
+                        <GroupBox Height="170" Margin="0,10,0,-10"/>
+                        <Label Content="TitleCoverFontColor" Margin="81,15,543,125"/>
+                        <TextBox Margin="301,15,134,125" x:Name="txtTitleCoverFontColor" />
+                        <TextBox Margin="681,15,10,125" x:Name="txtColor" Background="{Binding Text, Converter={StaticResource ConvertColor}, ElementName=txtTitleCoverFontColor}" />
+                        <Label Content="LogoIcon" Margin="81,50,543,90"/>
+                        <TextBox Margin="301,50,134,90" x:Name="txtLogoIcon"/>
+                        <Label Content="LogoWidth" Margin="81,85,543,55"/>
+                        <TextBox Margin="301,85,134,55" x:Name="txtLogoWidth" />
+                        <Label Content="LogoHeight" Margin="81,120,543,18"/>
+                        <TextBox Margin="301,120,134,20" x:Name="txtLogoHeight"/>
+                        <Image x:Name="imgLogoIcon" Margin="639,50,89,90" RenderTransformOrigin="0.5,1.133" Height="30" Width="40"/>
+                        <Button Margin="681,50,10,90" Content="Browes..." Click="Button_Click_2"/>
+                    </Grid>
+                </StackPanel>
+            </Expander>
+            <Expander  Header="CustomSocialSetup" HorizontalAlignment="Left" Margin="5,0,11,0" Height="auto"  VerticalAlignment="Top"  Width="782">
+                <StackPanel x:Name="aa" Margin="12,0,0,0">
+                    <Grid>
+                        <GroupBox Height="470"/>
+                        <Label Content="SHKMyAppName" Margin="81,10,543,431"/>
+                        <TextBox Margin="301,10,134,431" x:Name="txtSHKMyAppName"/>
+                        <Label Content="SHKMyAppURL" Margin="81,44,543,397"/>
+                        <TextBox Margin="301,44,134,397" x:Name="txtSHKMyAppURL"/>
+                        <Label Content="SHKTwitterConsumerKey" Margin="81,78,543,363"/>
+                        <TextBox Margin="301,78,134,363" x:Name="txtSHKTwitterConsumerKey"/>
+                        <Label Content="SHKTwitterSecret" Margin="81,112,543,329"/>
+                        <TextBox Margin="301,112,134,329" x:Name="txtSHKTwitterSecret"/>
+                        <Label Content="SHKTwitterCallbackUrl" Margin="81,146,543,295"/>
+                        <TextBox Margin="301,146,134,295" x:Name="txtSHKTwitterCallbackUrl"/>
+                        <Label Content="SHKFacebookKey" Margin="81,175,543,266"/>
+                        <TextBox Margin="301,175,134,266" x:Name="txtSHKFacebookKey"/>
+                        <Label Content="SHKFacebookSecret" Margin="81,204,543,237"/>
+                        <TextBox Margin="301,204,134,237" x:Name="txtSHKFacebookSecret"/>
+                        <Label Content="FacebookExtendedPermission" Margin="81,238,543,203"/>
+                        <TextBox Margin="301,238,134,203" x:Name="txtFacebookExtendedPermission"/>
+                        <Label Content="FacebookPictureApp" Margin="81,272,543,169"/>
+                        <TextBox Margin="301,272,134,169" x:Name="txtFacebookPictureApp"/>
+                        <Label Content="FacebookRedirectURI" Margin="81,301,543,140"/>
+                        <TextBox Margin="301,301,134,140" x:Name="txtFacebookRedirectURI"/>
+                        <Label Content="FacebookType" Margin="81,335,543,106"/>
+                        <TextBox Margin="301,335,134,106" x:Name="txtFacebookType"/>
+                        <Label Content="FacebookDisplay" Margin="81,369,543,72"/>
+                        <TextBox Margin="301,369,134,72" x:Name="txtFacebookDisplay"/>
+                        <Label Content="FacebookAppName" Margin="81,403,543,38"/>
+                        <TextBox Margin="301,403,134,38" x:Name="txtFacebookAppName"/>
+                        <Label Content="FacebookAppURL" Margin="81,437,543,4"/>
+                        <TextBox Margin="301,437,134,4" x:Name="txtFacebookAppURL"/>
+                    </Grid>
+                </StackPanel>
+            </Expander>
+            <Grid Height="48">
+                <Button Content="Save" HorizontalAlignment="Left" Margin="519,6,0,0" RenderTransformOrigin="3.156,0.517" VerticalAlignment="Top" Width="77" Height="32" Click="Button_Click_3"/>
+                <Button Content="Reset" HorizontalAlignment="Left" Margin="643,6,0,0" RenderTransformOrigin="3.156,0.517" VerticalAlignment="Top" Width="77" Height="32" Click="Button_Click_4"/>
+                <Button Content="Cancel" HorizontalAlignment="Left" Margin="394,6,0,0" RenderTransformOrigin="3.156,0.517" VerticalAlignment="Top" Width="77" Height="32" Click="Button_Click_5"/>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Window>

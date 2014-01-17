@@ -1,0 +1,434 @@
+﻿<Window x:Class="PPTargetTools.Pages.ConfigModernUI"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Config ModernUI" Height="850" Width="1000" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" Closing="Window_Closing" Icon="/PPTargetTools;component/Images/icon_title.ico">
+    <Grid Name="gridMain">
+        <Grid>
+            <ScrollViewer>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition ></RowDefinition>
+                        <RowDefinition ></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid Height="auto" Width="auto" Margin="0,21,0,80" Grid.RowSpan="2">
+                        <Border BorderThickness="1,1,1,1" Margin="100,25,80,20" BorderBrush="Black">
+                            <StackPanel Margin="20,25,20,30" Background="White">
+                                <Grid  Margin="20,20,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Label  Width="53" HorizontalAlignment="Left" Grid.Column="0" FontWeight="Bold"  FontSize="22" Visibility="Collapsed">Target:</Label>
+                                    <Label  Width="auto" HorizontalAlignment="Left" Grid.Column="1" Name="lblTarget" FontWeight="Bold" FontSize="22">PadPublisher</Label>
+                                </Grid>
+                                <Expander IsExpanded="True" Header="Title" HorizontalAlignment="Left" Margin="20,20,0,0" Width="auto" Height="auto" VerticalAlignment="Top">
+                                    <StackPanel>
+                                        <Expander IsExpanded="True"  Grid.Row="0" Header="TitleCover" HorizontalAlignment="Left" Margin="20,10,0,0" Width="auto" Height="auto" VerticalAlignment="Top" Background="White">
+                                            <StackPanel Margin="15,0,0,0">
+                                                <ListBox Margin="0,0,10,0" BorderThickness="1,1,1,1" Padding="5,5,30,5">
+                                                    <Grid>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="120"/>
+                                                            <ColumnDefinition  Width="180"/>
+                                                            <ColumnDefinition/>
+                                                            <ColumnDefinition/>
+                                                        </Grid.ColumnDefinitions>
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition/>
+                                                            <RowDefinition/>
+                                                            <RowDefinition/>
+                                                            <RowDefinition/>
+                                                            <RowDefinition/>
+                                                            <RowDefinition/>
+                                                            <RowDefinition/>
+                                                        </Grid.RowDefinitions>
+                                                        <Label Grid.Column="0" Margin="0,5,0,0" Content="BackgroundColor"/>
+                                                        <TextBox x:Name="txtTitleCoverBackground" TabIndex="0" Grid.Column="1" Width="150" Margin="5,5,0,0" Focusable="True"  />
+                                                        <Border BorderThickness="1" BorderBrush="Black"  Grid.Row="0" Grid.Column="2" Margin="10,5,0,0">
+                                                            <TextBlock x:Name="tblTitleCoverBackground"  Width="50" TextAlignment="Center" />
+                                                        </Border>
+                                                        <Image x:Name="imgTitleCoverBackground" Grid.Column="3" Source="/PPTargetTools;component/Images/error.png" Margin="10,0,10,0"  Visibility="Hidden"/>
+                                                        <Label Grid.Column="0" Grid.Row="2" Margin="0,5,0,0" Content="Foreground"/>
+                                                        <TextBox x:Name="txtTitleCoverForeColor" TabIndex="1" Grid.Column="1" Grid.Row="2" Width="150" Margin="5,5,0,0"/>
+                                                        <Border BorderThickness="1" BorderBrush="Black"  Grid.Row="2" Grid.Column="2" Margin="10,5,0,0">
+                                                            <TextBlock x:Name="tblTitleCoverForeground"  Width="50" TextAlignment="Center" />
+                                                        </Border>
+                                                        <Image x:Name="imgTitleCoverForeground" Grid.Column="3" Grid.Row="2" Source="/PPTargetTools;component/Images/error.png" Margin="10,0,10,0"  Visibility="Hidden"/>
+                                                    </Grid>
+
+                                                </ListBox>
+                                            </StackPanel>
+                                        </Expander>
+                                        <Expander IsExpanded="True" Grid.Row="0" Header="TitleLogin" HorizontalAlignment="Left" Margin="20,10,0,0" Width="auto" Height="auto" VerticalAlignment="Top">
+                                            <StackPanel Margin="15,0,0,0">
+                                                <ListBox Margin="0,0,10,0" BorderThickness="1,1,1,1" Padding="5,5,30,5">
+                                                    <Grid>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="120"/>
+                                                            <ColumnDefinition Width="180"/>
+                                                            <ColumnDefinition/>
+                                                            <ColumnDefinition/>
+                                                        </Grid.ColumnDefinitions>
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition/>
+                                                            <RowDefinition/>
+                                                            <RowDefinition/>
+                                                            <RowDefinition/>
+                                                            <RowDefinition/>
+                                                            <RowDefinition/>
+                                                            <RowDefinition/>
+                                                        </Grid.RowDefinitions>
+                                                        <Label Grid.Column="0" Grid.Row="0" Margin="0,5,0,0" Content="Foreground"/>
+                                                        <TextBox x:Name="txtTitleLoginForeground" Grid.Column="1" Grid.Row="0" Width="150" Margin="5,5,0,0"  TabIndex="2"/>
+                                                        <Border BorderThickness="1" BorderBrush="Black"  Grid.Row="0" Grid.Column="2" Margin="10,5,0,0">
+                                                            <TextBlock x:Name="tblTitleLoginForeground"  Width="50" TextAlignment="Center" />
+                                                        </Border>
+                                                        <Image x:Name="imgTitleLoginForeground" Grid.Column="3" Grid.Row="0" Source="/PPTargetTools;component/Images/error.png" Margin="10,0,10,0" Visibility="Hidden"/>
+
+                                                    </Grid>
+
+                                                </ListBox>
+                                            </StackPanel>
+                                        </Expander>
+                                    </StackPanel>
+                                </Expander>
+                                <Expander IsExpanded="True" Grid.Row="0" Header="Custom Social Setup" HorizontalAlignment="Left" Margin="20,10,0,0" Width="auto" Height="auto" VerticalAlignment="Top">
+                                    <StackPanel Margin="25,0,0,0">
+                                        <ListBox Margin="0,0,10,0" BorderThickness="1,1,1,1" Padding="5,5,30,5">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="35*"></ColumnDefinition>
+                                                    <ColumnDefinition Width="106*"/>
+                                                    <ColumnDefinition Width="305*"></ColumnDefinition>
+                                                    <ColumnDefinition Width="26*"></ColumnDefinition>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition></RowDefinition>
+                                                    <RowDefinition></RowDefinition>
+                                                    <RowDefinition></RowDefinition>
+                                                    <RowDefinition></RowDefinition>
+                                                    <RowDefinition></RowDefinition>
+                                                    <RowDefinition></RowDefinition>
+                                                    <RowDefinition></RowDefinition>
+                                                    <RowDefinition></RowDefinition>
+                                                </Grid.RowDefinitions>
+                                                <Label Grid.Column="0" Margin="0,5,0,0" Grid.ColumnSpan="2">SHKTwitterConsumerKey</Label>
+                                                <TextBox x:Name="txtCustomSHKTwiterKey"  Grid.Column="2" Width="300" Margin="5,5,0,0" TabIndex="3"></TextBox>
+                                                <Image Name="imgCustomSHKTwitterCSMKey" Grid.Column="3" Source="/PPTargetTools;component/Images/error.png" Margin="10,0,0,0" Visibility="Hidden"></Image>
+
+                                                <Label Grid.Column="0" Grid.Row="1" Margin="0,5,0,0" Grid.ColumnSpan="2">SHKTwitterSecret</Label>
+                                                <TextBox x:Name="txtCustomSHKTwiterSecret" Grid.Column="2" Grid.Row="1" Width="300" Margin="5,5,0,0" TabIndex="4"></TextBox>
+                                                <Image Name="imgCustomSHKTwiterSecret" Grid.Column="3" Source="/PPTargetTools;component/Images/error.png" Margin="10,0,0,0" Visibility="Hidden"></Image>
+
+                                                <Label Grid.Column="0" Grid.Row="2" Margin="0,5,0,0" Grid.ColumnSpan="2">SHKTwitterCallbackUrl</Label>
+                                                <TextBox x:Name="txtCustomSHKTwiterCallbackURL" Grid.Column="2" Grid.Row="2" Width="300" Margin="5,5,0,0" TabIndex="5"></TextBox>
+                                                <Image Name="imgCustomSHKTwiterCallbackUrl" Grid.Column="3" Source="/PPTargetTools;component/Images/error.png" Margin="10,0,0,0" Visibility="Hidden"></Image>
+
+                                                <Label Grid.Column="0" Grid.Row="3" Margin="0,5,0,0" Grid.ColumnSpan="2">SHKFacebookKey</Label>
+                                                <TextBox x:Name="txtCustomSHKFacebookKey" Grid.Column="2" Grid.Row="3" Width="300" Margin="5,5,0,0" TabIndex="6"></TextBox>
+                                                <Image Name="imgCustomSHKFacebookKey" Grid.Column="3" Source="/PPTargetTools;component/Images/error.png" Margin="10,0,0,0" Visibility="Hidden"></Image>
+
+                                                <Label Grid.Column="0" Grid.Row="4" Margin="0,5,0,0" Grid.ColumnSpan="2">SHKFacebookSecret</Label>
+                                                <TextBox x:Name="txtCustomSHKFacebookSecret" Grid.Column="2" Grid.Row="4" Width="300" Margin="5,5,0,0" TabIndex="7"></TextBox>
+                                                <Image Name="imgCustomSHKFacebookSecret" Grid.Column="3" Source="/PPTargetTools;component/Images/error.png" Margin="10,0,0,0" Visibility="Hidden"></Image>
+
+                                                <Label Grid.Column="0" Grid.Row="5" Margin="0,5,0,0" Grid.ColumnSpan="2">SHKMyAppName</Label>
+                                                <TextBox x:Name="txtCustomMyAppName" Grid.Column="2" Grid.Row="5" Width="300" Margin="5,5,0,0" TabIndex="8"></TextBox>
+                                                <Image Name="imgCustomSHKMyAppName" Grid.Column="3" Source="/PPTargetTools;component/Images/error.png" Margin="10,0,0,0" Visibility="Hidden"></Image>
+
+                                                <Label Grid.Column="0" Grid.Row="6" Margin="0,5,0,0" Grid.ColumnSpan="2">SHKMyAppURL</Label>
+                                                <TextBox x:Name="txtCustomMyAppURL" Grid.Column="2" Grid.Row="6" Width="300" Margin="5,5,0,0" TabIndex="9"></TextBox>
+                                                <Image Name="imgCustomSHKMayAppURL" Grid.Column="3" Source="/PPTargetTools;component/Images/error.png" Margin="10,0,0,0" Visibility="Hidden"></Image>
+
+                                            </Grid>
+
+                                        </ListBox>
+                                    </StackPanel>
+                                </Expander>
+                                <Expander  Header="Buttons  " HorizontalAlignment="Left"  Margin="20,10,0,0" Height="auto" Width="auto" VerticalAlignment="Top">
+                                    <StackPanel Name="controlStackPanel" Margin="12,0,0,0">
+                                        <Expander Header="Refresh" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="auto" Height="auto">
+                                            <StackPanel Margin="20,0,0,0">
+                                                <ListBox Margin="0,0,10,0" BorderThickness="1,1,1,1" Padding="5,5,30,5">
+                                                    <Grid>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="120"/>
+                                                            <ColumnDefinition Width="180"/>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                        </Grid.ColumnDefinitions>
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition></RowDefinition>
+                                                            <RowDefinition></RowDefinition>
+                                                            <RowDefinition></RowDefinition>
+                                                        </Grid.RowDefinitions>
+                                                        <Label Grid.Column="0" Margin="0,5,0,0">BackgroundColor</Label>
+                                                        <TextBox x:Name="txtButtonRefreshBackground" Grid.Column="1" Width="150" Margin="5,5,0,0"  TabIndex="10"></TextBox>
+                                                        <Border BorderThickness="1,1,1,1" BorderBrush="Black" Grid.Column="2" Margin="10,5,0,0" >
+                                                            <TextBlock Name="tblButtonRefreshBackground" Width="50" Background="#FF64A3D8" TextAlignment="Center" />
+                                                        </Border>
+                                                        <Image Name="imgRefreshBackgroundColor" Grid.Column="3" Source="/PPTargetTools;component/Images/error.png" Margin="10,0,0,0" Visibility="Hidden"></Image>
+
+
+                                                        <Label Grid.Column="0" Margin="0,5,0,0" Grid.Row="1">Foreground</Label>
+                                                        <TextBox x:Name="txtButtonRefreshForeground" Grid.Column="1" Grid.Row="1" Width="150" Margin="5,5,0,0" TabIndex="11"></TextBox>
+                                                        <Border BorderThickness="1,1,1,1" BorderBrush="Black" Grid.Column="2" Grid.Row="1" Margin="10,5,0,0" >
+                                                            <TextBlock Name="tblButtonRefreshForeground" Width="50" Background="#FF64A3D8" TextAlignment="Center" />
+                                                        </Border>
+                                                        <Image Name="imgRefreshForeground" Grid.Row="1" Grid.Column="3" Source="/PPTargetTools;component/Images/error.png" Margin="10,0,0,0" Visibility="Hidden"></Image>
+                                                    </Grid>
+                                                </ListBox>
+                                            </StackPanel>
+                                        </Expander>
+                                        <Expander Header="Read Issue" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" Width="auto" Height="auto">
+                                            <StackPanel Margin="20,0,0,0">
+                                                <ListBox Margin="0,0,10,0" BorderThickness="1,1,1,1" Padding="5,5,30,5">
+                                                    <Grid>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="120"/>
+                                                            <ColumnDefinition Width="180"/>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                        </Grid.ColumnDefinitions>
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition></RowDefinition>
+                                                            <RowDefinition></RowDefinition>
+                                                            <RowDefinition></RowDefinition>
+                                                        </Grid.RowDefinitions>
+                                                        <Label Grid.Column="0" Margin="0,5,0,0">BackgroundColor</Label>
+                                                        <TextBox x:Name="txtButtonReadBackground" Grid.Column="1" Width="150" Margin="5,5,0,0"  TabIndex="12"></TextBox>
+                                                        <Border BorderThickness="1,1,1,1" BorderBrush="Black" Grid.Column="2" Margin="10,5,0,0" >
+                                                            <TextBlock Name="tblButtonReadBackground" Grid.Column="2" Width="50" Background="#FF64A3D8" TextAlignment="Center" />
+                                                        </Border>
+                                                        <Image Name="imgReadBackgroundColor" Grid.Column="3" Source="/PPTargetTools;component/Images/error.png" Margin="10,0,0,0" Visibility="Hidden"></Image>
+
+
+                                                        <Label Grid.Column="0" Margin="0,5,0,0" Grid.Row="1">Foreground</Label>
+                                                        <TextBox x:Name="txtButtonReadForeground" Grid.Column="1" Width="150" Grid.Row="1" Margin="5,5,0,0" TabIndex="13"></TextBox>
+                                                        <Border BorderThickness="1,1,1,1" BorderBrush="Black" Grid.Column="2" Grid.Row="1" Margin="10,5,0,0" >
+                                                            <TextBlock Name="tblButtonReadForeground" Grid.Column="2" Width="50" Grid.Row="1" Background="#FF64A3D8" TextAlignment="Center" />
+                                                        </Border>
+                                                        <Image Name="imgReadForeground" Grid.Row="1" Grid.Column="3" Source="/PPTargetTools;component/Images/error.png" Margin="10,0,0,0" Visibility="Hidden"></Image>
+
+                                                    </Grid>
+                                                </ListBox>
+                                            </StackPanel>
+                                        </Expander>
+                                        <Expander Header="Update Issue" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" Width="auto" Height="auto">
+                                            <StackPanel Margin="20,0,0,0" >
+                                                <ListBox Margin="0,0,10,0" BorderThickness="1,1,1,1"  Padding="5,5,30,5">
+                                                    <Grid>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="120"/>
+                                                            <ColumnDefinition Width="180"/>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                        </Grid.ColumnDefinitions>
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition></RowDefinition>
+                                                            <RowDefinition></RowDefinition>
+                                                            <RowDefinition></RowDefinition>
+                                                        </Grid.RowDefinitions>
+                                                        <Label Grid.Column="0" Margin="0,5,0,0">BackgroundColor</Label>
+                                                        <TextBox x:Name="txtButtonUpdateBackground" Grid.Column="1" Width="150" Margin="5,5,0,0" TabIndex="14"></TextBox>
+                                                        <Border BorderThickness="1,1,1,1" BorderBrush="Black" Grid.Column="2" Margin="10,5,0,0" >
+                                                            <TextBlock Name="tblButtonUpdateBackground" Grid.Column="2" Width="50" Background="#FF64A3D8" TextAlignment="Center" />
+                                                        </Border>
+                                                        <Image Name="imgUpdateBackgroundColor" Grid.Column="3" Source="/PPTargetTools;component/Images/error.png" Margin="10,0,0,0" Visibility="Hidden"></Image>
+
+                                                        <Label Grid.Column="0" Margin="0,5,0,0" Grid.Row="1">Foreground</Label>
+                                                        <TextBox x:Name="txtButtonUpdateForeground" Grid.Row="1" Grid.Column="1" Width="150" Margin="5,5,0,0" TabIndex="15"></TextBox>
+                                                        <Border BorderThickness="1,1,1,1" BorderBrush="Black" Grid.Row="1" Grid.Column="2" Margin="10,5,0,0" >
+                                                            <TextBlock Name="tblButtonUpdateForeground" Grid.Column="2" Width="50" Background="#FF64A3D8" TextAlignment="Center" />
+                                                        </Border>
+                                                        <Image Name="imgUpdateForeground" Grid.Column="3" Grid.Row="1" Source="/PPTargetTools;component/Images/error.png" Margin="10,0,0,0" Visibility="Hidden"></Image>
+
+                                                    </Grid>
+                                                </ListBox>
+                                            </StackPanel>
+                                        </Expander>
+                                        <Expander Header="Delete Issue" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" Width="auto" Height="auto">
+                                            <StackPanel Margin="20,0,0,0">
+                                                <ListBox Margin="0,0,10,0" BorderThickness="1,1,1,1" Padding="5,5,30,5">
+                                                    <Grid>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="120"/>
+                                                            <ColumnDefinition Width="180"/>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                        </Grid.ColumnDefinitions>
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition></RowDefinition>
+                                                            <RowDefinition></RowDefinition>
+                                                            <RowDefinition></RowDefinition>
+                                                        </Grid.RowDefinitions>
+                                                        <Label Grid.Column="0" Margin="0,5,0,0">BackgroundColor</Label>
+                                                        <TextBox x:Name="txtButtonDeleteBackground" Grid.Column="1" Width="150" Margin="5,5,0,0" TabIndex="16"></TextBox>
+                                                        <Border BorderThickness="1,1,1,1" BorderBrush="Black" Grid.Column="2" Margin="10,5,0,0" >
+                                                            <TextBlock Name="tblButtonDeleteBackground"  Grid.Column="2" Width="50" Background="#FF64A3D8" TextAlignment="Center" />
+                                                        </Border>
+                                                        <Image Name="imgDeleteBackgroundColor" Grid.Column="3" Source="/PPTargetTools;component/Images/error.png" Margin="10,0,0,0" Visibility="Hidden"></Image>
+
+                                                        <Label Grid.Column="0" Margin="0,5,0,0" Grid.Row="1">Foreground</Label>
+                                                        <TextBox x:Name="txtButtonDeleteForeground" Grid.Row="1" Grid.Column="1" Width="150" Margin="5,5,0,0"  TabIndex="17"></TextBox>
+                                                        <Border BorderThickness="1,1,1,1" BorderBrush="Black" Grid.Row="1" Grid.Column="2" Margin="10,5,0,0" >
+                                                            <TextBlock Name="tblButtonDeleteForeground" Grid.Column="2" Width="50" Background="#FF64A3D8" TextAlignment="Center" />
+                                                        </Border>
+                                                        <Image Name="imgDeleteForeground" Grid.Column="3" Grid.Row="1" Source="/PPTargetTools;component/Images/error.png" Margin="10,0,0,0" Visibility="Hidden"></Image>
+
+                                                    </Grid>
+                                                </ListBox>
+                                            </StackPanel>
+                                        </Expander>
+                                        <Expander Header="Download Issue" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" Width="auto" Height="auto">
+                                            <StackPanel Margin="20,0,0,0">
+                                                <ListBox Margin="0,0,10,0" BorderThickness="1,1,1,1" Padding="5,5,30,5">
+                                                    <Grid>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="120"/>
+                                                            <ColumnDefinition Width="180"/>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                        </Grid.ColumnDefinitions>
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition></RowDefinition>
+                                                            <RowDefinition></RowDefinition>
+                                                            <RowDefinition></RowDefinition>
+                                                        </Grid.RowDefinitions>
+                                                        <Label Grid.Column="0" Margin="0,5,0,0">BackgroundColor</Label>
+                                                        <TextBox x:Name="txtButtonDownloadBackground" Grid.Column="1" Width="150" Margin="5,5,0,0" TabIndex="18"></TextBox>
+                                                        <Border BorderThickness="1,1,1,1" BorderBrush="Black" Grid.Column="2" Margin="10,5,0,0" >
+                                                            <TextBlock Name="tblButtonDownloadBackground" Grid.Column="2" Width="50" Background="#FF64A3D8" TextAlignment="Center" />
+                                                        </Border>
+                                                        <Image Name="imgDownloadBackgroundColor" Grid.Column="3" Source="/PPTargetTools;component/Images/error.png" Margin="10,0,0,0" Visibility="Hidden"></Image>
+
+                                                        <Label Grid.Column="0" Margin="0,5,0,0" Grid.Row="1">Foreground</Label>
+                                                        <TextBox x:Name="txtButtonDownloadForeground" Grid.Row="1" Grid.Column="1" Width="150" Margin="5,5,0,0" TabIndex="19"></TextBox>
+                                                        <Border BorderThickness="1,1,1,1" BorderBrush="Black" Grid.Row="1" Grid.Column="2" Margin="10,5,0,0" >
+                                                            <TextBlock Name="tblButtonDownloadForeground" Grid.Column="2" Width="50" Background="#FF64A3D8" TextAlignment="Center" />
+                                                        </Border>
+                                                        <Image Name="imgDownloadForeground" Grid.Column="3" Grid.Row="1" Source="/PPTargetTools;component/Images/error.png" Margin="10,0,0,0" Visibility="Hidden"></Image>
+
+                                                    </Grid>
+                                                </ListBox>
+                                            </StackPanel>
+                                        </Expander>
+                                        <Expander Header="Cancel Download Issue" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" Width="auto" Height="auto">
+                                            <StackPanel Margin="20,0,0,0">
+                                                <ListBox Margin="0,0,10,0" BorderThickness="1,1,1,1" Padding="5,5,30,5">
+                                                    <Grid>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="120"/>
+                                                            <ColumnDefinition Width="180"/>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                        </Grid.ColumnDefinitions>
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition></RowDefinition>
+                                                            <RowDefinition></RowDefinition>
+                                                            <RowDefinition></RowDefinition>
+                                                        </Grid.RowDefinitions>
+                                                        <Label Grid.Column="0" Margin="0,5,0,0">BackgroundColor</Label>
+                                                        <TextBox x:Name="txtButtonCancelBackground" Grid.Column="1" Width="150" Margin="5,5,0,0"  TabIndex="20"></TextBox>
+                                                        <Border BorderThickness="1,1,1,1" BorderBrush="Black" Grid.Column="2" Margin="10,5,0,0" >
+                                                            <TextBlock Name="tblButtonCancelBackground" Grid.Column="2" Width="50" Background="#FF64A3D8" TextAlignment="Center" />
+                                                        </Border>
+                                                        <Image Name="imgCancelBackgroundColor" Grid.Column="3" Source="/PPTargetTools;component/Images/error.png" Margin="10,0,0,0" Visibility="Hidden"></Image>
+
+                                                        <Label Grid.Column="0" Margin="0,5,0,0" Grid.Row="1">Foreground</Label>
+                                                        <TextBox x:Name="txtButtonCancelForeground" Grid.Row="1" Grid.Column="1" Width="150" Margin="5,5,0,0" TabIndex="21"></TextBox>
+                                                        <Border BorderThickness="1,1,1,1" BorderBrush="Black" Grid.Row="1" Grid.Column="2" Margin="10,5,0,0" >
+                                                            <TextBlock Name="tblButtonCancelForeground" Grid.Column="2" Width="50" Background="#FF64A3D8" TextAlignment="Center" />
+                                                        </Border>
+                                                        <Image Name="imgCancelForeground" Grid.Column="3" Grid.Row="1" Source="/PPTargetTools;component/Images/error.png" Margin="10,0,0,0" Visibility="Hidden"></Image>
+
+                                                    </Grid>
+                                                </ListBox>
+                                            </StackPanel>
+                                        </Expander>
+                                        <Expander Header="Login" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" Width="auto" Height="auto">
+                                            <StackPanel Margin="20,0,0,0">
+                                                <ListBox Margin="0,0,10,0" BorderThickness="1,1,1,1" Padding="5,5,30,5">
+                                                    <Grid>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="120"/>
+                                                            <ColumnDefinition Width="180"/>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                        </Grid.ColumnDefinitions>
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition></RowDefinition>
+                                                            <RowDefinition></RowDefinition>
+                                                            <RowDefinition></RowDefinition>
+                                                            <RowDefinition></RowDefinition>
+                                                        </Grid.RowDefinitions>
+                                                        <Label Grid.Column="0" Margin="0,5,0,0">BackgroundColor</Label>
+                                                        <TextBox x:Name="txtButtonLoginBackground" Grid.Column="1" Width="150" Margin="5,5,0,0" TabIndex="22"></TextBox>
+                                                        <Border BorderThickness="1,1,1,1" BorderBrush="Black" Grid.Column="2" Margin="10,5,0,0" >
+                                                            <TextBlock Name="tblButtonLoginBackground" Grid.Column="2" Width="50" Background="#FF64A3D8" TextAlignment="Center" />
+                                                        </Border>
+                                                        <Image Name="imgLoginBackgroundColor" Grid.Column="3" Source="/PPTargetTools;component/Images/error.png" Margin="10,0,0,0" Visibility="Hidden"></Image>
+
+                                                        <Label Grid.Column="0" Margin="0,5,0,0" Grid.Row="1">Foreground</Label>
+                                                        <TextBox x:Name="txtButtonLoginForeground" Grid.Row="1" Grid.Column="1" Width="150" Margin="5,5,0,0" TabIndex="23"></TextBox>
+                                                        <Border BorderThickness="1,1,1,1" BorderBrush="Black" Grid.Row="1" Grid.Column="2" Margin="10,5,0,0" >
+                                                            <TextBlock Name="tblButtonLoginForeground" Grid.Column="2" Width="50" Background="#FF64A3D8" TextAlignment="Center" />
+                                                        </Border>
+                                                        <Image Name="imgLoginForeground" Grid.Column="3" Grid.Row="1" Source="/PPTargetTools;component/Images/error.png" Margin="10,0,0,0" Visibility="Hidden"></Image>
+
+                                                    </Grid>
+                                                </ListBox>
+                                            </StackPanel>
+                                        </Expander>
+                                        <Expander Header="Cancel Login" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" Width="auto" Height="auto">
+                                            <StackPanel Margin="20,0,0,0">
+                                                <ListBox Margin="0,0,10,0" BorderThickness="1,1,1,1" Padding="5,5,30,5">
+                                                    <Grid>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="120"/>
+                                                            <ColumnDefinition Width="180"/>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                        </Grid.ColumnDefinitions>
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition></RowDefinition>
+                                                            <RowDefinition></RowDefinition>
+                                                            <RowDefinition></RowDefinition>
+                                                            <RowDefinition></RowDefinition>
+                                                        </Grid.RowDefinitions>
+                                                        <Label Grid.Column="0" Margin="0,5,0,0">BackgroundColor</Label>
+                                                        <TextBox x:Name="txtButtonCancelLoginBackground" Grid.Column="1" Width="150" Margin="5,5,0,0" TabIndex="24"></TextBox>
+                                                        <Border BorderThickness="1,1,1,1" BorderBrush="Black" Grid.Column="2" Margin="10,5,0,0" >
+                                                            <TextBlock Name="tblButtonCancelLoginBackground" Grid.Column="2" Width="50" Background="#FF64A3D8" TextAlignment="Center" />
+                                                        </Border>
+                                                        <Image Name="imgCancelLoginBackgroundColor" Grid.Column="3" Source="/PPTargetTools;component/Images/error.png" Margin="10,0,0,0" Visibility="Hidden"></Image>
+
+                                                        <Label Grid.Column="0" Margin="0,5,0,0" Grid.Row="1">Foreground</Label>
+                                                        <TextBox x:Name="txtButtonCancelLoginForeground" Grid.Row="1" Grid.Column="1" Width="150" Margin="5,5,0,0"  TabIndex="25"></TextBox>
+                                                        <Border BorderThickness="1,1,1,1" BorderBrush="Black" Grid.Row="1" Grid.Column="2" Margin="10,5,0,0" >
+                                                            <TextBlock Name="tblButtonCancelLoginForeground" Grid.Column="2" Width="50" Background="#FF64A3D8" TextAlignment="Center" />
+                                                        </Border>
+                                                        <Image Name="imgCancelLoginForeground" Grid.Column="3" Grid.Row="1" Source="/PPTargetTools;component/Images/error.png" Margin="10,0,0,0" Visibility="Hidden"></Image>
+
+                                                    </Grid>
+                                                </ListBox>
+                                            </StackPanel>
+                                        </Expander>
+                                    </StackPanel>
+                                </Expander>
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+                    <Grid VerticalAlignment="Bottom" Height="94" Grid.Row="1" Margin="0,0,0,-1">
+                        <Grid Margin="130,10,0,0" Height="41" VerticalAlignment="Top">
+                            <Button Name="btnSave" HorizontalAlignment="Left" Width="80" Height="28" Content="Save" Margin="10,11,0,2" Background="#FFE8EBEE" Click="btnSave_Click" TabIndex="26"/>
+                            <Button x:Name="btnRefresh" HorizontalAlignment="Left" Width="80" Height="28" Content="Refresh" Margin="118,11,0,2" Background="#FFDBDFE2" Click="btnRefresh_Click" TabIndex="27"/>
+                            <Button x:Name="btnClose" Height="28" Content="Close" Margin="0,11,125,2" Background="#FFE8E9EA" Click="btnClose_Click" HorizontalAlignment="Right" Width="80" TabIndex="28"/>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</Window>
