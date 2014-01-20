@@ -33,53 +33,57 @@ namespace PPTargetTools.Pages
     public partial class ConfigDesktop : Window
     {
         public string filepath;
-        
+        public string nametarget;
+
         public ConfigDesktop(string file)
         {
             InitializeComponent();
             loadData(file);
-         
         }
         public void loadData(string file)
         {
-            XDocument doc = XDocument.Load(file);
-            
-            foreach (var dm in doc.Descendants("General"))
+            try
             {
-                txtTitle.Text = dm.Element("Title").Value;
-                txtSplashScreen.Text = dm.Element("SplashScreen").Value;
-                txtAppIcon.Text = dm.Element("AppIcon").Value;
-                txtDefault.Text = dm.Element("DefaultPageShowOneColumn").Value;
+                XDocument doc = XDocument.Load(file);
+                foreach (var dm in doc.Descendants("General"))
+                {
+                    txtTitle.Text = dm.Element("Title").Value;
+                    txtSplashScreen.Text = dm.Element("SplashScreen").Value;
+                    txtAppIcon.Text = dm.Element("AppIcon").Value;
+                    txtDefault.Text = dm.Element("DefaultPageShowOneColumn").Value;
+                }
+                foreach (var dm in doc.Descendants("Home"))
+                {
+                    txtTitleCoverFontColor.Text = dm.Element("TitleCoverFontColor").Value;
+                    txtLogoIcon.Text = dm.Element("LogoIcon").Value;
+                    txtLogoWidth.Text = dm.Element("LogoWidth").Value;
+                    txtLogoHeight.Text = dm.Element("LogoHeight").Value;
+                }
+                foreach (var dm in doc.Descendants("CustomSocialSetup"))
+                {
+                    txtSHKMyAppName.Text = dm.Element("SHKMyAppName").Value;
+                    txtSHKMyAppURL.Text = dm.Element("SHKMyAppURL").Value;
+                    txtSHKTwitterConsumerKey.Text = dm.Element("SHKTwitterConsumerKey").Value;
+                    txtSHKTwitterSecret.Text = dm.Element("SHKTwitterSecret").Value;
+                    txtSHKTwitterCallbackUrl.Text = dm.Element("SHKTwitterCallbackUrl").Value;
+                    txtSHKFacebookSecret.Text = dm.Element("SHKFacebookSecret").Value;
+                    txtFacebookExtendedPermission.Text = dm.Element("FacebookExtendedPermission").Value;
+                    txtFacebookPictureApp.Text = dm.Element("FacebookPictureApp").Value;
+                    txtFacebookRedirectURI.Text = dm.Element("FacebookRedirectURI").Value;
+                    txtFacebookType.Text = dm.Element("FacebookType").Value;
+                    txtFacebookDisplay.Text = dm.Element("FacebookDisplay").Value;
+                    txtFacebookAppName.Text = dm.Element("FacebookAppName").Value;
+                    txtFacebookAppURL.Text = dm.Element("FacebookAppURL").Value;
+                }
             }
-            foreach (var dm in doc.Descendants("Home"))
+            catch (Exception)
             {
-                txtTitleCoverFontColor.Text = dm.Element("TitleCoverFontColor").Value;
-                txtLogoIcon.Text = dm.Element("LogoIcon").Value;
-                txtLogoWidth.Text = dm.Element("LogoWidth").Value;
-                txtLogoHeight.Text = dm.Element("LogoHeight").Value;
+                
+                throw;
             }
-            foreach (var dm in doc.Descendants("CustomSocialSetup"))
-            {
-                txtSHKMyAppName.Text = dm.Element("SHKMyAppName").Value;
-                txtSHKMyAppURL.Text = dm.Element("SHKMyAppURL").Value;
-                txtSHKTwitterConsumerKey.Text = dm.Element("SHKTwitterConsumerKey").Value;
-                txtSHKTwitterSecret.Text = dm.Element("SHKTwitterSecret").Value;
-                txtSHKTwitterCallbackUrl.Text = dm.Element("SHKTwitterCallbackUrl").Value;
-                txtSHKFacebookSecret.Text = dm.Element("SHKFacebookSecret").Value;
-                txtFacebookExtendedPermission.Text = dm.Element("FacebookExtendedPermission").Value;
-                txtFacebookPictureApp.Text = dm.Element("FacebookPictureApp").Value;
-                txtFacebookRedirectURI.Text = dm.Element("FacebookRedirectURI").Value;
-                txtFacebookType.Text = dm.Element("FacebookType").Value;
-                txtFacebookDisplay.Text = dm.Element("FacebookDisplay").Value;
-                txtFacebookAppName.Text = dm.Element("FacebookAppName").Value;
-                txtFacebookAppURL.Text = dm.Element("FacebookAppURL").Value;
-            }
+           
         }
-        public string TextColor
-        {
-            get { return txtTitleCoverFontColor.Text; }
-        }
-
+        
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             // Create OpenFileDialog
@@ -97,13 +101,13 @@ namespace PPTargetTools.Pages
                 // Open document
                 string filename = dlg.FileName;
                 txtSplashScreen.Text = filename;
+                
+               
                 BitmapImage logo = new BitmapImage();
                 logo.BeginInit();
                 logo.UriSource = new Uri(filename);
                 logo.EndInit(); // Getting exception here
                 imgSplashScreen.Source = logo;
-               
-               
             }
         }
 

@@ -23,8 +23,8 @@
                                 </Grid>
                                 <Expander IsExpanded="True" Header="Title" HorizontalAlignment="Left" Margin="20,20,0,0" Width="auto" Height="auto" VerticalAlignment="Top">
                                     <StackPanel>
-                                        <Expander IsExpanded="True"  Grid.Row="0" Header="TitleCover" HorizontalAlignment="Left" Margin="20,10,0,0" Width="auto" Height="auto" VerticalAlignment="Top" Background="White">
-                                            <StackPanel Margin="15,0,0,0">
+                                        <Expander IsExpanded="True"  Grid.Row="0" Header="TitleCover" HorizontalAlignment="Left" Margin="20,0,0,0" Width="auto" Height="auto" VerticalAlignment="Top" Background="White">
+                                            <StackPanel Margin="22,0,0,0">
                                                 <ListBox Margin="0,0,10,0" BorderThickness="1,1,1,1" Padding="5,5,30,5">
                                                     <Grid>
                                                         <Grid.ColumnDefinitions>
@@ -60,7 +60,7 @@
                                             </StackPanel>
                                         </Expander>
                                         <Expander IsExpanded="True" Grid.Row="0" Header="TitleLogin" HorizontalAlignment="Left" Margin="20,10,0,0" Width="auto" Height="auto" VerticalAlignment="Top">
-                                            <StackPanel Margin="15,0,0,0">
+                                            <StackPanel Margin="22,0,0,0">
                                                 <ListBox Margin="0,0,10,0" BorderThickness="1,1,1,1" Padding="5,5,30,5">
                                                     <Grid>
                                                         <Grid.ColumnDefinitions>
@@ -93,7 +93,7 @@
                                     </StackPanel>
                                 </Expander>
                                 <Expander IsExpanded="True" Grid.Row="0" Header="Custom Social Setup" HorizontalAlignment="Left" Margin="20,10,0,0" Width="auto" Height="auto" VerticalAlignment="Top">
-                                    <StackPanel Margin="25,0,0,0">
+                                    <StackPanel Margin="42,0,0,0">
                                         <ListBox Margin="0,0,10,0" BorderThickness="1,1,1,1" Padding="5,5,30,5">
                                             <Grid>
                                                 <Grid.ColumnDefinitions>
@@ -145,7 +145,7 @@
                                         </ListBox>
                                     </StackPanel>
                                 </Expander>
-                                <Expander  Header="Buttons  " HorizontalAlignment="Left"  Margin="20,10,0,0" Height="auto" Width="auto" VerticalAlignment="Top">
+                                <Expander  Header="Buttons" HorizontalAlignment="Left"  Margin="20,10,0,0" Height="auto" Width="auto" VerticalAlignment="Top">
                                     <StackPanel Name="controlStackPanel" Margin="12,0,0,0">
                                         <Expander Header="Refresh" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="auto" Height="auto">
                                             <StackPanel Margin="20,0,0,0">

@@ -47,23 +47,15 @@ namespace PPTargetTools.Pages
             if (MessageBox.Show("Are you sure ?", "Save", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
                 Save();
+                HideImages();
+                LoadData();
+                changed = false;
             }
         }
 
         private void btnRefresh_Click(object sender, RoutedEventArgs e)
         {
-            if (changed)
-            {
-                if (MessageBox.Show("Do you want save the change information ?", "Refresh", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
-                {
-                    Save();
-                }
-            }
-            SetDefault();
-            LoadData();
-            btnClose.IsEnabled = true;
-            changed = false;
-            HideImages();
+            Refresh();
         }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
@@ -142,7 +134,6 @@ namespace PPTargetTools.Pages
         {
             try
             {
-
                 doc = XDocument.Load(_pathFile);
 
                 #region "Title"
@@ -396,8 +387,28 @@ namespace PPTargetTools.Pages
             SaveStyleColor();
             SaveAndValidate_CustomSocial();
             btnClose.IsEnabled = true;
-            changed = false;
-            HideImages();
+        }
+
+        private void Refresh()
+        {
+            try
+            {
+                if (changed)
+                {
+                    if (MessageBox.Show("Are you sure?", "Refresh", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)
+                    {
+                        return;
+                    }
+                }
+                SetDefault();
+                LoadData();
+                btnClose.IsEnabled = true;
+                changed = false;
+                HideImages();
+            }
+            catch (Exception)
+            {
+            }
         }
 
         private void SaveAndValidate_CustomSocial()

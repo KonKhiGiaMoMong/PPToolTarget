@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\KloonWork\PPToolTarget\pp-tools-target-github\PPToolTarget\SourceCode\PPTargetTools\PPTargetTools\obj\Debug\
+D:\KloonWork\PPToolTarget\Github\SourceCode\PPTargetTools\PPTargetTools\obj\Debug\
 PPTargetTools
 none
 false
 DEBUG;TRACE
-D:\KloonWork\PPToolTarget\pp-tools-target-github\PPToolTarget\SourceCode\PPTargetTools\PPTargetTools\App.xaml
-5-2127340672
+D:\KloonWork\PPToolTarget\Github\SourceCode\PPTargetTools\PPTargetTools\App.xaml
+3-231774049
 
-14490924617
+11-589067680
 27498656023
-Controls\EditStyleControl.xaml;Controls\ExpanderControl.xaml;MainWindow.xaml;Pages\ConfigDesktop.xaml;Pages\ConfigModernUI.xaml;
+MainWindow.xaml;Pages\ConfigDesktop.xaml;Pages\ConfigModernUI.xaml;
 
 False
 
