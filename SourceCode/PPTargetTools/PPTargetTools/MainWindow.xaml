@@ -21,8 +21,8 @@
                     <Label Margin="52,9,344,1" Content="Target Name:" Grid.ColumnSpan="2"/>
                     <TextBox x:Name="txtNameTarget" Margin="21,9,-86,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="426" Height="26" Grid.Column="1"/>
                     <CheckBox x:Name="cbExistTarget" Content="Exist Target" Checked="cbExistTarget_Checked"  Margin="58,15,330,51" Grid.Row="1"  Unchecked="cbExistTarget_Unchecked" Grid.ColumnSpan="2" />
-                    <ComboBox x:Name="cbbTarget" HorizontalAlignment="Right" Margin="0,10,-32,0" Height="26" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="6.69,0.373" Width="322" IsEnabled="False" Grid.Column="1"/>
-                    <Button Content="Create" x:Name="btmCreate" Click="btmCreate_Click"   Margin="0,160,-142,-102" Grid.Row="1" RenderTransformOrigin="6.69,0.373" BorderThickness="1" HorizontalAlignment="Right" Height="26" Width="85" Grid.Column="1">
+                    <ComboBox x:Name="cbbTarget" HorizontalAlignment="Right" Margin="0,10,-51,0" Height="26" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="6.69,0.373" Width="365" IsEnabled="False" Grid.Column="1"/>
+                    <Button Content="Create" x:Name="btmCreate" Click="btmCreate_Click"   Margin="0,64,96,23" Grid.Row="1" RenderTransformOrigin="6.69,0.373" BorderThickness="1" HorizontalAlignment="Right" Height="26" Width="85" Grid.Column="1">
                         <Button.Foreground>
                             <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlTextColorKey}}"/>
                         </Button.Foreground>
@@ -41,11 +41,11 @@
                     </Grid.RowDefinitions>
                     <Label Margin="98,67,365,93" Grid.Row="1" Content="Target Name:"/>
                     <CheckBox x:Name="cbPPDesktop" Content="PubCloud DeskTop" Margin="191,32,223,136" Grid.Row="1" Checked="cbPPDesktop_Checked" Unchecked="cbPPDesktop_Unchecked"/>
-                    <CheckBox x:Name="cbPPModernUI" Content="PubCloud ModernUI" Margin="362,32,47,136" Grid.Row="1" Unchecked="cbPPModernUI_Unchecked" Checked="cbPPModernUI_Checked" />
-                    <Button x:Name="btnCopy" Content="Copy" RenderTransformOrigin="19.22,11.218" Height="26" Width="85" Margin="401,173,0,29" Click="btnCopy_Click" Grid.Row="1" HorizontalAlignment="Left" />
+                    <CheckBox x:Name="cbPPModernUI" Content="PubCloud ModernUI" Margin="374,32,35,136" Grid.Row="1" Unchecked="cbPPModernUI_Unchecked" Checked="cbPPModernUI_Checked" />
+                    <Button Content="Copy" RenderTransformOrigin="19.22,11.218" Height="26" Width="85" Margin="427,173,0,29" Click="Button_Click_1" Grid.Row="1" HorizontalAlignment="Left" />
                     <ComboBox x:Name="cbbTargetSub" HorizontalAlignment="Left" Margin="191,67,0,0" Height="26" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="6.69,0.373" Width="322"/>
-                    <Button x:Name="btnCopyReverse" Content="Reverse" RenderTransformOrigin="19.22,11.218" Height="26" Width="85" Margin="294,173,0,29" Grid.Row="1" ToolTip="Copy " Click="btnCopyReverse_Click" IsEnabled="False" HorizontalAlignment="Left"/>
-                    <Button x:Name="btnEdit_Config" Content="Edit Config" RenderTransformOrigin="19.22,11.218" Height="26" Width="85" Margin="180,173,0,29" Click="btnEdit_Config_Click" Grid.Row="1" HorizontalAlignment="Left" />
+                    <Button x:Name="btnCopyReverse" Content="Reverse" RenderTransformOrigin="19.22,11.218" Height="26" Width="85" Margin="310,173,0,29" Grid.Row="1" Click="btnCopyReverse_Click" IsEnabled="False" HorizontalAlignment="Left"/>
+                    <Button x:Name="btnEdit_Config" Content="Edit Config" RenderTransformOrigin="19.22,11.218" Height="26" Width="85" Margin="191,173,0,29" Click="btnEdit_Config_Click" Grid.Row="1" HorizontalAlignment="Left" />
                 </Grid>
             </TabItem>
         </TabControl>
